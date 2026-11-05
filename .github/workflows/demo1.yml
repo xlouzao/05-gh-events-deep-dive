@@ -4,6 +4,13 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - "dev-*"
+      - "feat/**" # feat/new ; feat/new/feature
+    path-ignore:
+      - ".github/workflows/*"
 
 jobs:
   deploy:
